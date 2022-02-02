@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.card-holder {
+    margin: 200px auto;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.img-holder {
+    position: relative;
+    width: 233px;
+    height: 333px;
+}
+
+.front {
+    position: absolute;
+    width: 233px;
+    height: 333px;
+    backface-visibility: hidden;
+    transform: perspective(900px) rotateY(180deg);
+}
+
+.front img, .back img {
+    width: 233px;
+    height: 333px;
+}
+
+.back {
+    position: absolute;
+    width: 233px;
+    height: 333px;
+    backface-visibility: hidden;
+
+}
+
+.btn-holder {
+    display: flex;
+    justify-content: center;
+}
