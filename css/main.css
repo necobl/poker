@@ -1,15 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 .card-holder {
-    margin: 200px auto;
+    margin: 100px auto;
     width: 1200px;
-    display:  flex;
+    display: flex;
     justify-content: space-between;
-    
+
 }
 
 .img-holder {
@@ -26,7 +26,7 @@
     transform: perspective(900px) rotate(180deg);
 }
 
-.front img, .back img{
+.front img, .back img {
     width: 233px;
     height: 333px;
 }
@@ -38,18 +38,23 @@
     backface-visibility: hidden;
 }
 
-.button-holder{
+.button-holder {
     display: flex;
     justify-content: center;
 }
 
 
-.selected{
-    top:50px;
+.selected {
+    top: 50px;
 }
 
-.cardWin{
-    outline:  5px solid green;
-    box-shadow:  0 0 30px green;
-    border-radius:  8px;
+.cardWin {
+    outline: 5px solid green;
+    box-shadow: 0 0 30px green;
+    border-radius: 8px;
+}
+
+.main-poker-box {
+    border: 1px solid black;
+    border-radius: 10px;
 }

@@ -18,6 +18,8 @@ class Game {
         this.btn.innerHTML = "Start" + this.round;
         this.cardIndex = 0;  // svaki put kada pocne nova runda vracamo card index na 0
         this.turnOnBack();
+        let infoWins = document.querySelector('.info-wins');
+        infoWins.innerHTML = '';
     }
     removeAllSelected() {
         document.querySelectorAll('.selected').forEach(div => {
@@ -50,7 +52,7 @@ class Game {
             cardFront.onclick = function () {
                 cardFront.classList.toggle('selected')
             }
-            setTimeout(() => { 
+            setTimeout(() => {
                 cardBack.style.transform = "perspective(900px) rotateY(180deg)"; // ovo bi radilo samo za jednu karticu
                 cardFront.style.transform = "perspective(900px) rotateY(0)";
                 this.cardIndex++;
@@ -85,29 +87,31 @@ class Game {
 
     checkWins() {
         let wins = new Wins(this.finalCards);
+        let infoWins = document.querySelector('.info-wins');
+        infoWins.innerHTML = '';
         if (wins.royalFlush()) {
-            console.log("Royal Flush");
+            infoWins.innerHTML = "Win - Royal Flush"
             this.selectWinCards(wins);
         } else if (wins.straightFlush()) {
-            console.log("Straigth flush");
+            infoWins.innerHTML = "Win - Straigth flush"
             this.selectWinCards(wins);
         } else if (wins.poker()) {
-            console.log("Poker");
+            infoWins.innerHTML = "Win - Poker"
             this.selectWinCards(wins);
         } else if (wins.fullHouse()) {
-            console.log("Full house");
+            infoWins.innerHTML = "Win - Full house"
             this.selectWinCards(wins);
         } else if (wins.straight()) {
-            console.log("Straight");
+            infoWins.innerHTML = "Win - Straight"
             this.selectWinCards(wins);
         } else if (wins.threeOfaKind()) {
-            console.log("Three of a kind");
+            infoWins.innerHTML = "Win - Three of a kind"
             this.selectWinCards(wins);
         } else if (wins.twoPairs()) {
-            console.log("Two pairs");
+            infoWins.innerHTML = "Win - Two pairs"
             this.selectWinCards(wins);
         } else if (wins.jacksOrBetter()) {
-            console.log("Jacks or better");
+            infoWins.innerHTML = "Win - Jacks or better"
             this.selectWinCards(wins);
         }
     }
